@@ -7,7 +7,7 @@ Tabla::Tabla(int n){
 	_maxNumber = pow(2, n) - 1;
 	_maxDigits = _numbersDigits(_maxNumber);
 	_quantite = n;
-	_maxRows = floor(sqrt(_maxQNumbers));
+	_maxRows = floor(sqrt(_maxQNumbers)) - 1;
 	_generateTablas();
 }
 
