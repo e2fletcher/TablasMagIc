@@ -21,5 +21,6 @@ int main(int argc, char** argv){
 	for(int i = 1; i <= t.Quantite(); ++i){
 		cout << t.Print(i) << endl;
 	}
+
 	return 0;
 } 

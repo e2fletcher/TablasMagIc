@@ -2,7 +2,7 @@
 #include <cmath>
 #include <sstream>
 
-Tabla::Tabla(int n){
+Tabla::Tabla(const unsigned int& n){
 	_maxQNumbers = pow(2, n - 1);
 	_maxNumber = pow(2, n) - 1;
 	_maxDigits = _numbersDigits(_maxNumber);
@@ -12,11 +12,11 @@ Tabla::Tabla(int n){
 	_generateTablas();
 }
 
-int Tabla::Quantite(){
+unsigned int Tabla::Quantite(){
 	return _quantite;
 }
 
-string Tabla::Print(int n){
+string Tabla::Print(unsigned int n){
 	n = n - 1;
 	ostringstream t;
 	
@@ -54,9 +54,9 @@ string Tabla::Print(int n){
 
 void Tabla::_generateTablas(){
 	// Incializando matriz para guardar tabla
-	_tabla = new int*[_quantite];
+	_tabla = new unsigned int*[_quantite];
 	for(int i = 0; i < _quantite; ++i){
-		_tabla[i] = new int[_maxQNumbers];
+		_tabla[i] = new unsigned int[_maxQNumbers];
 		// Guardando el elemento Binario
 		_tabla[i][0] = pow(2, i);
 	}
@@ -73,7 +73,7 @@ void Tabla::_generateTablas(){
 	}
 }
 
-int Tabla::_numbersDigits(int n){
+unsigned int Tabla::_numbersDigits(unsigned int n){
     int cont = 0, res, sum = 0;
     while(n != 0){
         res = n % 10;
@@ -84,7 +84,7 @@ int Tabla::_numbersDigits(int n){
     return cont;
 }
 
-bool Tabla::_isInclude(int n1, int n2){
+bool Tabla::_isInclude(unsigned int n1, unsigned int n2){
 	int i = 0, res, coc;
 	
 	while(n2 > 0){
@@ -99,8 +99,4 @@ bool Tabla::_isInclude(int n1, int n2){
 		i++;
 	}
 	return false;
-}
-
-Tabla::~Tabla(){
-	delete [] _tabla;
 }

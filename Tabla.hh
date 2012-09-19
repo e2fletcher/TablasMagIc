@@ -6,22 +6,21 @@ using namespace std;
 
 class Tabla {
 public:
-	Tabla(int);
-	~Tabla();
-	string Print(int);
-	int Quantite();
+	Tabla(const unsigned int&);
+	string Print(unsigned int);
+	unsigned int Quantite();
 
 private:
-	int *(*_tabla);
-	int _maxQNumbers;
-	int _maxNumber;
-	int _maxDigits;
-	int _quantite;
-	int _maxRows;
-	int _numbersCforRow;
+	unsigned int *(*_tabla);
+	unsigned int _maxQNumbers;
+	unsigned int _maxNumber;
+	unsigned int _maxDigits;
+	unsigned int _quantite;
+	unsigned int _maxRows;
+	unsigned int _numbersCforRow;
 	void _generateTablas();
-	int _numbersDigits(int n);
-	bool _isInclude(int n1, int n2);
+	unsigned int _numbersDigits(unsigned int n);
+	bool _isInclude(unsigned int n1,unsigned  int n2);
 
 };
 
