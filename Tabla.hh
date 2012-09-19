@@ -18,6 +18,7 @@ private:
 	int _maxDigits;
 	int _quantite;
 	int _maxRows;
+	int _numbersCforRow;
 	void _generateTablas();
 	int _numbersDigits(int n);
 	bool _isInclude(int n1, int n2);

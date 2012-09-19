@@ -8,6 +8,7 @@ Tabla::Tabla(int n){
 	_maxDigits = _numbersDigits(_maxNumber);
 	_quantite = n;
 	_maxRows = floor(sqrt(_maxQNumbers));
+	_numbersCforRow = (_maxRows * _maxDigits) + 3 * (_maxRows - 1);
 	_generateTablas();
 }
 
@@ -18,20 +19,37 @@ int Tabla::Quantite(){
 string Tabla::Print(int n){
 	n = n - 1;
 	ostringstream t;
+	
+	// Linea Borde de tabla
+	string l;
+	for(int i = 1; i <= _numbersCforRow; ++i)
+		if(i == _numbersCforRow)
+			l += "-\n";
+		else
+			l += "-";
+	t << l;
+	// End linea borde de tabla
+
 	for(int i = 0; i < _maxQNumbers; ++i){
+		// Espacio para numeros con menos digitos q _maxDigits
 		if(_numbersDigits(_tabla[n][i]) < _maxDigits){
 			for(int j = 0; j < (_maxDigits - _numbersDigits(_tabla[n][i])); ++j)
 				t << " ";
 		}
+
 		t << _tabla[n][i];
+		
+		// Raya entre números y fin de linea para cada fila
 		if((i + 1) % _maxRows == 0 || (i + 1) == _maxQNumbers)
 			t << "\n";
 		else
 			t << " - ";
 	}
-
+	
+	// Linea borde de tabla
+	t << l;
+	
 	return t.str();
-
 }
 
 void Tabla::_generateTablas(){
