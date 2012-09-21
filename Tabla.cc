@@ -100,3 +100,9 @@ bool Tabla::_isInclude(unsigned int n1, unsigned int n2){
 	}
 	return false;
 }
+
+/*Tabla::~Tabla(){
+	for(int i = 0; i < _quantite; ++i)
+		delete  [] _tabla[i];
+	delete [] _tabla;
+}*/

@@ -7,6 +7,7 @@ using namespace std;
 class Tabla {
 public:
 	Tabla(const unsigned int&);
+//	~Tabla();
 	string Print(unsigned int);
 	unsigned int Quantite();
 
