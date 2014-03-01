@@ -5,6 +5,6 @@ ADD_EXECUTABLE(gtablas Main)
 ADD_LIBRARY(gentablam SHARED Tabla)
 TARGET_LINK_LIBRARIES(gtablas gentablam)
 INSTALL(TARGETS gtablas gentablam
-            RUNTIME DESTINATION /usr/local/bin
-            LIBRARY DESTINATION /usr/local/lib)
+            RUNTIME DESTINATION /usr/bin
+            LIBRARY DESTINATION /usr/lib)
 
